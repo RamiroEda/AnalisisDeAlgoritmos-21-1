@@ -1,7 +1,7 @@
 package models
 
-class AlgorithmPair(private val first: String, val second: (Long) -> Long){
+class AlgorithmPair(private val name: String, val handler: (Long, AlgorithmScenario) -> Long){
     override fun toString(): String {
-        return first
+        return name
     }
 }

@@ -11,7 +11,11 @@ fun createRandomIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array
         if(it == valueToSearchIndex){
             valueToSearch
         }else{
-            Random.nextInt().rem(upperBound).absoluteValue
+            var newValue = Random.nextInt().rem(upperBound).absoluteValue
+            while (newValue == valueToSearch){
+                newValue = Random.nextInt().rem(upperBound).absoluteValue
+            }
+            newValue
         }
     }
 }
@@ -22,7 +26,11 @@ fun createWorstCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Ar
         if(it == size-1){
             valueToSearch
         }else{
-            Random.nextInt().rem(upperBound).absoluteValue
+            var newValue = Random.nextInt().rem(upperBound).absoluteValue
+            while (newValue == valueToSearch){
+                newValue = Random.nextInt().rem(upperBound).absoluteValue
+            }
+            newValue
         }
     }
 }
@@ -33,7 +41,11 @@ fun createBestCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Arr
         if(it == 0){
             valueToSearch
         }else{
-            Random.nextInt().rem(upperBound).absoluteValue
+            var newValue = Random.nextInt().rem(upperBound).absoluteValue
+            while (newValue == valueToSearch){
+                newValue = Random.nextInt().rem(upperBound).absoluteValue
+            }
+            newValue
         }
     }
 }
