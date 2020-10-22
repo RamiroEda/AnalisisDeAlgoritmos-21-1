@@ -1,14 +1,19 @@
 package models
 
-import utils.createBestCaseIntArray
-import utils.createRandomIntArray
-import utils.createWorstCaseIntArray
+import utils.*
 import kotlin.system.measureNanoTime
 
-enum class AlgorithmScenario{
-    WORST_CASE,
-    BEST_CASE,
-    MEDIUM_CASE
+enum class AlgorithmScenario (private val title: String){
+    SEARCH_WORST_CASE("Busqueda: Peor caso"),
+    SEARCH_BEST_CASE("Busqueda: Mejor caso"),
+    SORT_WORST_CASE("Ordenar: Peor caso"),
+    SORT_BEST_CASE("Ordenar: Mejor caso"),
+    RANDOM_CASE("Caso aleatorio");
+
+
+    override fun toString(): String {
+        return title
+    }
 }
 
 abstract class Algorithm (scenario: AlgorithmScenario){
@@ -18,9 +23,11 @@ abstract class Algorithm (scenario: AlgorithmScenario){
 
     protected var refreshDataset = { size : Long ->
         this.dataset = when(scenario){
-            AlgorithmScenario.WORST_CASE -> createWorstCaseIntArray(size.toInt(), 6, 1000)
-            AlgorithmScenario.BEST_CASE -> createBestCaseIntArray(size.toInt(), 6, 1000)
-            AlgorithmScenario.MEDIUM_CASE -> createRandomIntArray(size.toInt(), 6, 1000)
+            AlgorithmScenario.SEARCH_WORST_CASE -> createSearchWorstCaseIntArray(size.toInt(), 6, 1000)
+            AlgorithmScenario.SEARCH_BEST_CASE -> createSearchBestCaseIntArray(size.toInt(), 6, 1000)
+            AlgorithmScenario.RANDOM_CASE -> createRandomIntArray(size.toInt(), 6, 1000)
+            AlgorithmScenario.SORT_WORST_CASE -> createSortWorstCaseIntArray(size.toInt())
+            AlgorithmScenario.SORT_BEST_CASE -> createSortBestCaseIntArray(size.toInt())
         }
     }
 

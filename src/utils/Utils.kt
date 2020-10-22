@@ -20,7 +20,7 @@ fun createRandomIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array
     }
 }
 
-fun createWorstCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array<Int> {
+fun createSearchWorstCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array<Int> {
     if(valueToSearch >= upperBound) throw Exception("El valor a buscar debe ser menor al limite superior")
     return Array(size){
         if(it == size-1){
@@ -35,7 +35,7 @@ fun createWorstCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Ar
     }
 }
 
-fun createBestCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array<Int> {
+fun createSearchBestCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Array<Int> {
     if(valueToSearch >= upperBound) throw Exception("El valor a buscar debe ser menor al limite superior")
     return Array(size){
         if(it == 0){
@@ -50,6 +50,17 @@ fun createBestCaseIntArray(size: Int, valueToSearch: Int, upperBound: Int) : Arr
     }
 }
 
+fun createSortWorstCaseIntArray(size: Int) : Array<Int> {
+    return Array(size){
+        size-it
+    }
+}
+
+fun createSortBestCaseIntArray(size: Int) : Array<Int> {
+    return Array(size){
+        it
+    }
+}
 
 fun millisToTime(millis: Long) : String {
     val seconds = millis.div(1000).toInt().rem(60)
