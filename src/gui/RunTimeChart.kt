@@ -6,7 +6,7 @@ import javafx.scene.chart.NumberAxis
 import javafx.scene.chart.XYChart
 import tornadofx.runAsync
 
-const val UPDATE_THRESHOLD = 200
+const val UPDATE_THRESHOLD = 50
 
 class RunTimeChart {
     val chart = LineChart<Number, Number>(NumberAxis(), NumberAxis())

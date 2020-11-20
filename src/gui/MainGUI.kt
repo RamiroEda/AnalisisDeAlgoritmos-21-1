@@ -1,7 +1,10 @@
 package gui
 
+import algorithms.graphs.FibonacciDynamic
+import algorithms.graphs.FibonacciIterative
+import algorithms.graphs.FibonacciRecursive
 import algorithms.search.LinearSearch
-import algorithms.sort.BubbleSort
+import algorithms.sort.*
 import javafx.application.Platform
 import javafx.collections.FXCollections
 import javafx.collections.ObservableList
@@ -12,7 +15,6 @@ import javafx.scene.control.CheckBox
 import javafx.scene.control.Label
 import javafx.scene.text.Font
 import javafx.stage.WindowEvent
-import models.Algorithm
 import models.AlgorithmPair
 import models.AlgorithmScenario
 import tornadofx.*
@@ -28,6 +30,41 @@ val ALGORIHM_LIST = listOf(
             val sort = BubbleSort(scenario)
             sort.run(size)
             sort.runTimeInNanos
+        },
+        AlgorithmPair("Ordenamiento Burbuja Optimizado"){ size, scenario ->
+            val sort = OptimizedBubbleSort(scenario)
+            sort.run(size)
+            sort.runTimeInNanos
+        },
+        AlgorithmPair("Ordenamiento Insert"){ size, scenario ->
+            val sort = InsertSort(scenario)
+            sort.run(size)
+            sort.runTimeInNanos
+        },
+        AlgorithmPair("Ordenamiento Merge"){ size, scenario ->
+            val sort = MergeSort(scenario)
+            sort.run(size)
+            sort.runTimeInNanos
+        },
+        AlgorithmPair("Ordenamiento Rápido"){ size, scenario ->
+            val sort = QuickSort(scenario)
+            sort.run(size)
+            sort.runTimeInNanos
+        },
+        AlgorithmPair("Fibonacci Iterativo"){ size, _ ->
+            val fibonacci = FibonacciIterative()
+            fibonacci.run(size)
+            fibonacci.runTimeInNanos
+        },
+        AlgorithmPair("Fibonacci Recursivo"){ size, _ ->
+            val fibonacci = FibonacciRecursive()
+            fibonacci.run(size)
+            fibonacci.runTimeInNanos
+        },
+        AlgorithmPair("Fibonacci Dinamico"){ size, _ ->
+            val fibonacci = FibonacciDynamic()
+            fibonacci.run(size)
+            fibonacci.runTimeInNanos
         }
 )
 

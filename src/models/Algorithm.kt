@@ -8,7 +8,8 @@ enum class AlgorithmScenario (private val title: String){
     SEARCH_BEST_CASE("Busqueda: Mejor caso"),
     SORT_WORST_CASE("Ordenar: Peor caso"),
     SORT_BEST_CASE("Ordenar: Mejor caso"),
-    RANDOM_CASE("Caso aleatorio");
+    RANDOM_CASE("Caso aleatorio"),
+    NO_DATA("Sin datos");
 
 
     override fun toString(): String {
@@ -28,6 +29,7 @@ abstract class Algorithm (scenario: AlgorithmScenario){
             AlgorithmScenario.RANDOM_CASE -> createRandomIntArray(size.toInt(), 6, 1000)
             AlgorithmScenario.SORT_WORST_CASE -> createSortWorstCaseIntArray(size.toInt())
             AlgorithmScenario.SORT_BEST_CASE -> createSortBestCaseIntArray(size.toInt())
+            AlgorithmScenario.NO_DATA -> arrayOf()
         }
     }
 
@@ -36,5 +38,6 @@ abstract class Algorithm (scenario: AlgorithmScenario){
         runTimeInNanos = measureNanoTime {
             algorithm()
         }
+        println()
     }
 }
