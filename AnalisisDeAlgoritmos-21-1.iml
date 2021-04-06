@@ -10,5 +10,6 @@
     <orderEntry type="library" name="KotlinJavaRuntime" level="project" />
     <orderEntry type="library" name="org.jetbrains.kotlin:kotlin-stdlib:1.4.10" level="project" />
     <orderEntry type="library" name="no.tornado:tornadofx:1.7.20" level="project" />
+    <orderEntry type="library" name="com.github.doyaaaaaken:kotlin-csv:0.6.1" level="project" />
   </component>
 </module>

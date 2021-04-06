@@ -38,6 +38,5 @@ abstract class Algorithm (scenario: AlgorithmScenario){
         runTimeInNanos = measureNanoTime {
             algorithm()
         }
-        println()
     }
 }

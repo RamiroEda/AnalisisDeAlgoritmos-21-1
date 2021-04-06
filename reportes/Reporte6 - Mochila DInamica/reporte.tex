@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\title{Reporte 6: Mochila Dinamica\\\textbf{Análisis de Algoritmos}}
+\author{ Ramiro Estrada García\\2015190034 }
+\date{16 de Diciembre del 2020}
+
+\begin{document}
+\maketitle
+\vspace{5cm}
+\section {Características del PC}
+\begin{itemize}
+	\item CPU: Intel Core i5 9700F a 4.1GHz
+	\item RAM: 16GB a 2666MHz
+\end{itemize}
+\newpage
+\maketitle
+\section{Algoritmo}
+\begin{enumerate}
+	\item Se crea un elemento con el menor valor posible y el mayor peso posible.
+	\item Se crea un indice en -1
+	\item Por cada elemento a revisar
+	\begin{enumerate}
+        \item Si el elemento tiene un mayor valor que el anterior, su peso no sobrepasa al peso maximo de la mochila y ademas su indice no se ha usado antes: El elemento del paso 1 se reemplaza pore este.
+        \item Se guarda el indice de este elemento temporalmente
+    \end{enumerate}
+    \item Si el indice es mayor a -1
+    \begin{enumerate}
+        \item Se guarda el indice
+        \item Se va al paso 1 reduciendo el espacio de la mochila a: El peso maximo actual menos el peso del elemento agregado
+    \end{enumerate}
+    \item Si el indice es -1
+    \begin{enumerate}
+        \item Termina
+    \end{enumerate}
+\end{enumerate}
+\maketitle
+\section{Resultados}
+Este es el resultado de el archivo de 10000 elementos. Su ejecucion fue de 2.7 segundos. \\ \\
+\newcommand{\sep}{\hspace*{.5em}}
+\noindent
+$\fbox{0} \sep $\fbox{736} \sep $\fbox{928} \sep $\fbox{930} \sep $\fbox{1666} \sep $\fbox{1858} \sep $\fbox{2594} \sep $\fbox{950} \sep $\fbox{1686} \sep $\fbox{1878} \sep $\fbox{984} \sep $\fbox{1720} \sep $\fbox{1912} \sep $\fbox{1914} \sep $\fbox{2650} \sep $\fbox{2842} \sep $\fbox{3578} \sep $\fbox{1934} \sep $\fbox{2670} \sep $\fbox{988} \sep $\fbox{994} \sep $\fbox{1730} \sep $\fbox{1922} \sep $\fbox{1924} \sep $\fbox{2660} \sep $\fbox{2852} \sep $\fbox{997} \sep $\fbox{1733} \sep $\fbox{1925} \sep $\fbox{1927} \sep $\fbox{2663} \sep $\fbox{2855} \sep $\fbox{3591} \sep $\fbox{1947} \sep $\fbox{2683} \sep $\fbox{2875} \sep $\fbox{1981} \sep $\fbox{2717} \sep $\fbox{2909} \sep $\fbox{2911} \sep $\fbox{3647} \sep $\fbox{3839} \sep $\fbox{4575} \sep $\fbox{2931} \sep $\fbox{3667} \sep $\fbox{1985} \sep $\fbox{1991} \sep $\fbox{2727} \sep $\fbox{2919} \sep $\fbox{2921}
+\end{document}
